@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/businessLogic.dart/home_page_bloc/home_page_bloc.dart';
-import 'package:non_existing/cards&classes.dart/customColors.dart';
-import 'package:non_existing/cards&classes.dart/donorClass.dart';
-import 'package:non_existing/presentations/donatePage.dart';
+import 'package:non_existing/business_logic.dart/home_page_bloc/home_page_bloc.dart';
+import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/cards&classes.dart/donor_class.dart';
+import 'package:non_existing/presentations/donate_page.dart';
+import 'package:non_existing/presentations/message_page.dart';
+import 'package:non_existing/presentations/notification_page.dart';
+import 'package:non_existing/presentations/profile_page.dart';
 
 List<BottomNavigationBarItem> navItems = const <BottomNavigationBarItem>[
   BottomNavigationBarItem(
@@ -41,10 +44,10 @@ List<Donor> donors = [
 ];
 
 List<Widget> navScreens = <Widget>[
-  DonatePage(),
-  Text('2'),
-  Text('3'),
-  Text('4'),
+  const DonatePage(),
+  const MessagePage(),
+  const NotificationPage(),
+  const ProfilePage(),
 ];
 
 class HomePage extends StatelessWidget {
@@ -64,7 +67,10 @@ class HomePage extends StatelessWidget {
               iconSize: 25.0,
               backgroundColor: CustomColors.button,
               selectedItemColor: CustomColors.background,
-              unselectedFontSize: 14.0,
+              selectedLabelStyle: const TextStyle(fontFamily: 'Merriweather'),
+              selectedFontSize: 13.0,
+              unselectedLabelStyle: const TextStyle(fontFamily: 'Merriweather'),
+              unselectedFontSize: 13.0,
               unselectedItemColor: CustomColors.stroke,
               type: BottomNavigationBarType.fixed,
               onTap: (index) {

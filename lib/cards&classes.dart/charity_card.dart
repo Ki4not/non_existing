@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/customColors.dart';
-import 'package:non_existing/cards&classes.dart/donorClass.dart';
+import 'package:non_existing/cards&classes.dart/charity_class.dart';
+import 'package:non_existing/cards&classes.dart/custom_colors.dart';
 
-class DonorCard extends StatelessWidget {
-  const DonorCard({
+class CharityCard extends StatelessWidget {
+  const CharityCard({
     super.key,
-    required this.donor
+    required this.charity
   });
 
-  final Donor donor;
+  final Charity charity;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class DonorCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(
-                10.0), // Adjust the value for desired corner radius
+                10.0),
             child: const Image(
                 image: AssetImage('assets/images/thagaamlogo.jpg'),
                 width: 100.0,
@@ -32,34 +32,23 @@ class DonorCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                donor.companyName,
+                charity.companyName,
                 style: TextStyle(
                     fontSize: 13.0, fontWeight: FontWeight.bold,
                     fontFamily: 'Merriweather',
                     color: CustomColors.buttonText),
               ),
               const SizedBox(height: 5.0,),
-              Text(donor.foodName,
-                  style: TextStyle(fontSize: 11.0, color: CustomColors.buttonText,
-                  fontFamily: 'Merriweather',),
-                  ),
-              Text(
-                'Qty: ${donor.quantity}',
-                style: TextStyle(
-                    fontSize: 11.0, 
-                    fontFamily: 'Merriweather',
-                    color: CustomColors.buttonText),
-              ),
-              Text(
-                donor.time,
-                style: TextStyle(
-                    fontSize: 11.0, 
-                    fontFamily: 'Merriweather',
-                    color: CustomColors.buttonText),
-              ),
-              Text(donor.date,
-                  style: TextStyle(fontSize: 11.0, color: CustomColors.buttonText,
-                  fontFamily: 'Merriweather'))
+              Container(
+                width: 150.0,
+                height: 70.0,
+                child: Text(
+                  charity.description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 10.0, color: CustomColors.buttonText,
+                  fontFamily: 'Merriweather')),
+              )
             ],
           ),
           IconButton(

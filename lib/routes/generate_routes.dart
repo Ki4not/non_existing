@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:non_existing/businessLogic.dart/home_page_bloc/home_page_bloc.dart';
-import 'package:non_existing/presentations/homePage.dart';
+import 'package:non_existing/business_logic.dart/home_page_bloc/home_page_bloc.dart';
+import 'package:non_existing/presentations/home_page.dart';
 
 class RouteGenerator {
   final HomePageBloc homePageBloc = HomePageBloc();

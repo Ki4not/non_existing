@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:non_existing/cards&classes.dart/charityCard.dart';
-import 'package:non_existing/cards&classes.dart/charityClass.dart';
-import 'package:non_existing/cards&classes.dart/customColors.dart';
-import 'package:non_existing/cards&classes.dart/donateHeaderLabel.dart';
-import 'package:non_existing/cards&classes.dart/donorCard.dart';
-import 'package:non_existing/cards&classes.dart/donorClass.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:non_existing/cards&classes.dart/charity_card.dart';
+import 'package:non_existing/cards&classes.dart/charity_class.dart';
+import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/cards&classes.dart/page_header_label.dart';
+import 'package:non_existing/cards&classes.dart/donor_card.dart';
+import 'package:non_existing/cards&classes.dart/donor_class.dart';
+import 'package:non_existing/presentations/charity_page.dart';
 
 List<Donor> donors = [
   Donor(
@@ -75,7 +77,7 @@ class DonatePage extends StatelessWidget {
                 const SizedBox(
                   height: 40.0,
                 ),
-                const DonateHeaderLabel(
+                const PageHeaderLabel(
                   text: 'My Donations',
                   buttonText: 'See all',
                 ),
@@ -92,9 +94,19 @@ class DonatePage extends StatelessWidget {
                 const SizedBox(
                   height: 20.0,
                 ),
-                const DonateHeaderLabel(
-                  text: 'My Donations',
+                PageHeaderLabel(
+                  text: 'Charities',
                   buttonText: 'See all',
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                    msg: 'Charities',
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CharityPage()));
+                  },
                 ),
           
                 Column(

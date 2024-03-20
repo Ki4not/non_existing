@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:non_existing/cards&classes.dart/customColors.dart';
+import 'package:non_existing/cards&classes.dart/custom_colors.dart';
 
-class DonateHeaderLabel extends StatelessWidget {
-  const DonateHeaderLabel({super.key, required this.text, required this.buttonText});
+class PageHeaderLabel extends StatelessWidget {
+  const PageHeaderLabel(
+      {super.key, required this.text, required this.buttonText, this.onPressed});
 
   final String text;
   final String buttonText;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class DonateHeaderLabel extends StatelessWidget {
               fontSize: 20.0,
             )),
         TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             buttonText,
             style: TextStyle(
