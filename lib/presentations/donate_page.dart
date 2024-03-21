@@ -7,6 +7,7 @@ import 'package:non_existing/cards&classes.dart/page_header_label.dart';
 import 'package:non_existing/cards&classes.dart/donor_card.dart';
 import 'package:non_existing/cards&classes.dart/donor_class.dart';
 import 'package:non_existing/presentations/charity_page.dart';
+import 'package:non_existing/presentations/view_charity_page.dart';
 
 List<Donor> donors = [
   Donor(
@@ -57,7 +58,7 @@ class DonatePage extends StatelessWidget {
                   'Welcome back,',
                   style: TextStyle(
                     fontSize: 20.0,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: CustomColors.buttonText,
                     fontFamily: 'Merriweather',
                   ),
@@ -69,7 +70,7 @@ class DonatePage extends StatelessWidget {
                   'Kian June Catubig!',
                   style: TextStyle(
                     fontSize: 15.0,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: CustomColors.buttonText,
                     fontFamily: 'Merriweather',
                   ),
@@ -112,7 +113,18 @@ class DonatePage extends StatelessWidget {
                 Column(
                   children: charities
                       .map((charity) => CharityCard(
-                            charity: charity,
+                            charity: charity, 
+                            onPressed: () {
+                              Fluttertoast.showToast(
+                              msg: 'View Charity',
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                            );
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ViewCharityPage()));
+                            },
                           ))
                       .toList(),
                 ),

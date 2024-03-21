@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:non_existing/cards&classes.dart/custom_colors.dart';
 import 'package:non_existing/cards&classes.dart/page_header.dart';
 import 'package:non_existing/cards&classes.dart/settings_card.dart';
 import 'package:non_existing/cards&classes.dart/settings_class.dart';
+import 'package:non_existing/presentations/login_page.dart';
 
 List<Settings> settings = [
   Settings(icon: FontAwesomeIcons.user, text: 'Edit profile'),
@@ -114,7 +116,7 @@ class ProfilePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextButton(
-                            onPressed: (){},
+                            onPressed: ()=> _dialogueBuilder(context),
                             child: Text('Log Out',
                             style: TextStyle(
                                 fontSize: 16.0, fontWeight: FontWeight.bold,
@@ -124,7 +126,7 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                       IconButton(
-                        onPressed: (){}, 
+                        onPressed: () => _dialogueBuilder(context), 
                         icon: Icon(
                           FontAwesomeIcons.greaterThan,
                           color: CustomColors.button,
@@ -142,4 +144,43 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<void> _dialogueBuilder(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: const Text('Are you sure you want to log out?', style: TextStyle(fontSize: 18.0, fontFamily: 'Merriweather'),),
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          elevation: 25,
+          actions: [
+            
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge),
+            child: Text('Cancel', style: TextStyle(color: CustomColors.buttonText, fontSize: 15.0, fontFamily: 'Merriweather'),),
+          ),
+          
+          TextButton(
+              onPressed: () {
+                Fluttertoast.showToast(
+                  msg: 'Welcome to Pantopia!',
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LandingPage()));
+              },
+              style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge),
+              child: Text('Log out', style: TextStyle(color: CustomColors.button, fontSize: 15.0, fontFamily: 'Merriweather'),),
+            ),
+          ],
+
+        );
+      });
 }
