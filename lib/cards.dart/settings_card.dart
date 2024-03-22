@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/settings_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/classes/settings_class.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 class SettingsCard extends StatelessWidget {
   const SettingsCard({
@@ -36,10 +37,7 @@ class SettingsCard extends StatelessWidget {
               TextButton(
                 onPressed: (){},
                 child: Text(setting.text,
-                style: TextStyle(
-                    fontSize: 16.0, fontWeight: FontWeight.bold,
-                    fontFamily: 'Merriweather',
-                    color: CustomColors.buttonText),),
+                style: CustomTextStyle.boldMedium),
               ),
             ],
           ),

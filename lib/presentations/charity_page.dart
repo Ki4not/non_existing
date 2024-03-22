@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/charity_card.dart';
-import 'package:non_existing/cards&classes.dart/charity_class.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/search_bar.dart';
+import 'package:non_existing/cards.dart/charity_card.dart';
+import 'package:non_existing/classes/charity_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/search_bar.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 List<Charity> charities = [
   Charity(
@@ -41,7 +42,7 @@ class CharityPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: CustomColors.button,
         centerTitle: true,
-        title: Text('Charities', style: TextStyle(fontFamily: 'Merriweather', color: CustomColors.buttonText)),
+        title: Text('Charities', style: CustomTextStyle.extraLarge),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(50.0),
           child: Padding(

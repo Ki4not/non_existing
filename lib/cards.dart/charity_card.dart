@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/charity_class.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/classes/charity_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 class CharityCard extends StatelessWidget {
   const CharityCard({super.key, required this.charity, this.onPressed});
@@ -13,7 +14,7 @@ class CharityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0.0,
-      color: CustomColors.background,
+      color: Colors.transparent,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -30,27 +31,17 @@ class CharityCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                charity.companyName,
-                style: TextStyle(
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Merriweather',
-                    color: CustomColors.buttonText),
-              ),
+              Text(charity.companyName, style: CustomTextStyle.small),
               const SizedBox(
                 height: 5.0,
               ),
-              Container(
+              SizedBox(
                 width: 150.0,
                 height: 70.0,
                 child: Text(charity.description,
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        fontSize: 10.0,
-                        color: CustomColors.buttonText,
-                        fontFamily: 'Merriweather')),
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                  style: CustomTextStyle.xxSmall)
               )
             ],
           ),
@@ -60,7 +51,8 @@ class CharityCard extends StatelessWidget {
                 FontAwesomeIcons.greaterThan,
                 color: CustomColors.button,
                 size: 18.0,
-              )),
+              )
+            ),
         ],
       ),
     );

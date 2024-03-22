@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/page_header.dart';
-import 'package:non_existing/cards&classes.dart/settings_card.dart';
-import 'package:non_existing/cards&classes.dart/settings_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/settings_card.dart';
+import 'package:non_existing/classes/settings_class.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 import 'package:non_existing/presentations/login_page.dart';
 
 List<Settings> settings = [
@@ -39,7 +39,7 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const PageHeader(text: 'Profile'),
+                Text('Profile', style: CustomTextStyle.extraLarge,),
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -49,25 +49,13 @@ class ProfilePage extends StatelessWidget {
                   height: 20.0,
                 ),
                 Center(
-                  child: Text(
-                    'Kian June Catubig',
-                    style: TextStyle(
-                        fontSize: 15.0, fontWeight: FontWeight.bold,
-                        fontFamily: 'Merriweather',
-                        color: CustomColors.buttonText),
-                  ),
+                  child: Text('Kian June Catubig', style: CustomTextStyle.boldMedium),
                 ),
                 const SizedBox(
                   height: 5.0,
                 ),
                 Center(
-                  child: Text(
-                    'kianjune.catubig@ctu.edu.ph',
-                    style: TextStyle(
-                        fontSize: 13.0, fontWeight: FontWeight.w500,
-                        fontFamily: 'Merriweather',
-                        color: CustomColors.buttonText),
-                  ),
+                  child: Text('kianjune.catubig@ctu.edu.ph', style: CustomTextStyle.lightSmall),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -117,11 +105,7 @@ class ProfilePage extends StatelessWidget {
                         children: [
                           TextButton(
                             onPressed: ()=> _dialogueBuilder(context),
-                            child: Text('Log Out',
-                            style: TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold,
-                                fontFamily: 'Merriweather',
-                                color: CustomColors.buttonText),),
+                            child: Text('Log Out', style: CustomTextStyle.boldMedium),
                           ),
                         ],
                       ),
@@ -151,7 +135,7 @@ Future<void> _dialogueBuilder(BuildContext context) {
       context: context,
       builder: (context) {
         return AlertDialog(
-          content: const Text('Are you sure you want to log out?', style: TextStyle(fontSize: 18.0, fontFamily: 'Merriweather'),),
+          content: Text('Are you sure you want to log out?', style: CustomTextStyle.large),
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           elevation: 25,
@@ -163,7 +147,7 @@ Future<void> _dialogueBuilder(BuildContext context) {
             },
             style: TextButton.styleFrom(
                 textStyle: Theme.of(context).textTheme.labelLarge),
-            child: Text('Cancel', style: TextStyle(color: CustomColors.buttonText, fontSize: 15.0, fontFamily: 'Merriweather'),),
+            child: Text('Cancel', style: CustomTextStyle.lightMedium),
           ),
           
           TextButton(
@@ -177,7 +161,7 @@ Future<void> _dialogueBuilder(BuildContext context) {
               },
               style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge),
-              child: Text('Log out', style: TextStyle(color: CustomColors.button, fontSize: 15.0, fontFamily: 'Merriweather'),),
+              child: Text('Log out', style: CustomTextStyle.buttonMedium),
             ),
           ],
 

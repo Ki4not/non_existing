@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/white_button.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -30,18 +32,12 @@ class _LandingPageState extends State<LandingPage> {
           child: Column(
             children: [
               Center(
-                  child: Image.asset(
+                child: Image.asset(
                 'assets/images/pantopialogo.png',
                 width: 180.0,
                 height: 180.0,
               )),
-              Text(
-                'PANTOPIA',
-                style: TextStyle(
-                    color: CustomColors.buttonText,
-                    fontSize: 30.0,
-                    fontFamily: 'Merriweather'),
-              ),
+              Text('PANTOPIA', style: CustomTextStyle.xxLarge),
               const SizedBox(
                 height: 30.0,
               ),
@@ -49,11 +45,7 @@ class _LandingPageState extends State<LandingPage> {
                 padding: const EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                 child: Text(
                   'Where food finds a new chapter, donated, or stored for later.',
-                  style: TextStyle(
-                    color: CustomColors.buttonText,
-                    fontSize: 13.0,
-                    fontFamily: 'Merriweather',
-                  ),
+                  style: CustomTextStyle.lightSmall,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -104,46 +96,27 @@ class _LandingPageState extends State<LandingPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        icon: Icon(
-                          FontAwesomeIcons.lessThan,
-                          size: 20.0,
-                          color: CustomColors.background,
-                        )),
+                      onPressed: () => Navigator.pop(context),
+                      icon: Icon(
+                        FontAwesomeIcons.lessThan,
+                        size: 18.0,
+                        color: CustomColors.background,
+                      )
+                    ),
                     TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Forgot password?',
-                          style: TextStyle(
-                              color: CustomColors.background,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Merriweather'),
-                        )),
+                      onPressed: () {},
+                      child: Text('Forgot password?', style: CustomTextStyle.whiteLightExtraSmall)
+                    ),
                   ],
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                Text(
-                  'Getting started',
-                  style: TextStyle(
-                      color: CustomColors.buttonText,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Merriweather'),
-                ),
+                Text('Getting started', style: CustomTextStyle.boldLarge),
                 const SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Good to see you back!',
-                  style: TextStyle(
-                      color: CustomColors.buttonText,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Merriweather'),
-                ),
+                Text('Good to see you back!', style: CustomTextStyle.medium),
                 const SizedBox(
                   height: 30.0,
                 ),
@@ -226,53 +199,19 @@ class _LandingPageState extends State<LandingPage> {
                 const SizedBox(
                   height: 130.0,
                 ),
-                Container(
-                  width: 300.0,
-                  decoration: BoxDecoration(
-                      color: CustomColors.background,
-                      borderRadius: BorderRadius.circular(50.0),
-                      border: Border.all(
-                          width: 2.0, color: CustomColors.buttonText)),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: CustomColors.background,
-                        elevation: 0.0),
-                    onPressed: () {},
-                    child: Text(
-                      'SIGN IN',
-                      style: TextStyle(
-                          color: CustomColors.buttonText,
-                          fontSize: 18.0,
-                          fontFamily: 'Merriweather',
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
+                const WhiteButton(buttonText: 'SIGN IN',),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Dont have account? ',
-                      style: TextStyle(
-                          color: CustomColors.buttonText,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Merriweather'),
-                    ),
+                    Text('Dont have account? ', style: CustomTextStyle.lightMedium),
                     TextButton(
-                        onPressed: () {
-                          Navigator.pop(
-                              context); // Close current sheet (optional)
-                          showSignUpSheet(context); // Open Sign Up sheet
-                        },
-                        child: Text(
-                          'Sign up!',
-                          style: TextStyle(
-                              color: CustomColors.background,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Merriweather'),
-                        )),
+                      onPressed: () {
+                        Navigator.pop(
+                            context); // Close current sheet (optional)
+                        showSignUpSheet(context); // Open Sign Up sheet
+                      },
+                      child: Text('Sign up!', style: CustomTextStyle.whiteLightMedium)
+                    ),
                   ],
                 )
               ],
@@ -313,39 +252,19 @@ Future<dynamic> showSignUpSheet(BuildContext context) {
                         color: CustomColors.background,
                       )),
                   TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Need some help?',
-                        style: TextStyle(
-                            color: CustomColors.background,
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Merriweather'),
-                      )),
+                    onPressed: () {},
+                    child: Text('Need some help?', style: CustomTextStyle.whiteLightExtraSmall)
+                  ),
                 ],
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              Text(
-                'Getting started',
-                style: TextStyle(
-                    color: CustomColors.buttonText,
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Merriweather'),
-              ),
+              Text('Getting started', style: CustomTextStyle.boldLarge),
               const SizedBox(
                 height: 10.0,
               ),
-              Text(
-                'Create account to continue!',
-                style: TextStyle(
-                    color: CustomColors.buttonText,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Merriweather'),
-              ),
+              Text('Create account to continue!', style: CustomTextStyle.boldMedium),
               const SizedBox(
                 height: 30.0,
               ),
@@ -455,50 +374,17 @@ Future<dynamic> showSignUpSheet(BuildContext context) {
               const SizedBox(
                 height: 80.0,
               ),
-              Container(
-                width: 300.0,
-                decoration: BoxDecoration(
-                    color: CustomColors.background,
-                    borderRadius: BorderRadius.circular(50.0),
-                    border:
-                        Border.all(width: 2.0, color: CustomColors.buttonText)),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: CustomColors.background, elevation: 0.0),
-                  onPressed: () {},
-                  child: Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                        color: CustomColors.buttonText,
-                        fontSize: 18.0,
-                        fontFamily: 'Merriweather',
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
+              const WhiteButton(buttonText: 'SIGN UP',),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Already have an account? ',
-                    style: TextStyle(
-                        color: CustomColors.buttonText,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Merriweather'),
-                  ),
+                  Text('Already have an account? ', style: CustomTextStyle.lightMedium),
                   TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text(
-                        'Sign in',
-                        style: TextStyle(
-                            color: CustomColors.background,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Merriweather'),
-                      )),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('Sign in', style: CustomTextStyle.whiteLightMedium)
+                  ),
                 ],
               )
             ],

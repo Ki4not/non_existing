@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/notification_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/classes/notification_class.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 class NotificationCard extends StatelessWidget {
   const NotificationCard({
@@ -31,25 +32,18 @@ class NotificationCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 5.0,),
-              Container(
+              SizedBox(
                 width: 150.0,
                 height: 70.0,
                 child: Text(
                   notification.description,
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 12.0, color: CustomColors.buttonText,
-                  fontFamily: 'Merriweather')),
+                  style: CustomTextStyle.lightExtraSmall,)
               )
             ],
           ),
-          Text(
-              notification.time,
-              style: TextStyle(
-                  fontSize: 13.0, fontWeight: FontWeight.w500,
-                  fontFamily: 'Merriweather',
-                  color: CustomColors.buttonText),
-            ),
+          Text(notification.time, style: CustomTextStyle.lightExtraSmall),
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
 
 class SearchBox extends StatefulWidget {
   const SearchBox({super.key, required this.width});

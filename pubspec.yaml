@@ -87,6 +87,7 @@ flutter:
     - family: Merriweather
       fonts:
         - asset: assets/fonts/Merriweather-Regular.ttf
+        - asset: assets/fonts/Merriweather-Light.ttf
     #       style: italic
     # - family: Trajan Pro
     #   fonts:

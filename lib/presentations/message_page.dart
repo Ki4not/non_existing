@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/message_card.dart';
-import 'package:non_existing/cards&classes.dart/message_class.dart';
-import 'package:non_existing/cards&classes.dart/page_header.dart';
-import 'package:non_existing/cards&classes.dart/search_bar.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/message_card.dart';
+import 'package:non_existing/classes/message_class.dart';
+import 'package:non_existing/cards.dart/search_bar.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 List<Message> messages = [
   Message(charityName: 'Thagaam Foundation', lastMesseger: 'You', message: 'Thank you so much!', time: '7:36 PM'),
@@ -33,7 +33,7 @@ class MessagePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const PageHeader(text: 'Messages'),
+                Text('Messages', style: CustomTextStyle.extraLarge,),
                 const SizedBox(
                   height: 10.0,
                 ),

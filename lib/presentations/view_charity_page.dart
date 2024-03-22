@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/yellow_button.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 class ViewCharityPage extends StatelessWidget {
   const ViewCharityPage({super.key});
@@ -11,7 +13,7 @@ class ViewCharityPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: CustomColors.button,
         centerTitle: true,
-        title: Text('Thaagam Foundation', style: TextStyle(fontFamily: 'Merriweather', color: CustomColors.buttonText)),
+        title: Text('Thaagam Foundation', style: CustomTextStyle.extraLarge),
         leading: IconButton(
           icon: Icon(FontAwesomeIcons.arrowLeft, color: CustomColors.buttonText), // Set button color
           onPressed: () => Navigator.pop(context), // Handle icon button press
@@ -43,13 +45,7 @@ class ViewCharityPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Food Campaign',
-                    style: TextStyle(
-                      color: CustomColors.buttonText,
-                      fontFamily: 'Merriweather',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                    )),
+                Text('Food Campaign', style: CustomTextStyle.extraLarge),
                 IconButton(
                   onPressed: (){},
                   icon: Icon(Icons.share, color: CustomColors.button,),
@@ -58,20 +54,8 @@ class ViewCharityPage extends StatelessWidget {
             ),
             Row(
               children: [
-                Text('Organized by: ',
-                    style: TextStyle(
-                      color: CustomColors.buttonText,
-                      fontFamily: 'Merriweather',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13.0,
-                    )),
-                Text('DBC',
-                style: TextStyle(
-                  color: CustomColors.button,
-                  fontFamily: 'Merriweather',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13.0,
-                )),
+                Text('Organized by: ', style: CustomTextStyle.lightSmall),
+                Text('DBC', style: CustomTextStyle.buttonSmall),
               ],
             ),
             const SizedBox(height: 15.0,),
@@ -81,35 +65,15 @@ class ViewCharityPage extends StatelessWidget {
               textAlign: TextAlign.justify,
               maxLines: 10,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 12.0,
-                color: CustomColors.buttonText,
-                fontFamily: 'Merriweather',
-              )
+              style: CustomTextStyle.lightExtraSmall
             ),
             const SizedBox(height: 15.0,),
 
-            Container(
-              width: 300.0, 
-              decoration: BoxDecoration(
-                color: CustomColors.button, 
-                borderRadius: BorderRadius.circular(50.0),
-                border: Border.all(width: 2.0, color: CustomColors.buttonText)
-              ),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: CustomColors.button, elevation: 0.0),
-                onPressed: () {
-                  
-                },
-                child: Text('DONATE', style: TextStyle(color: CustomColors.buttonText, fontSize: 18.0, fontFamily: 'Merriweather', fontWeight: FontWeight.bold),),
-              ),
-            ),
-
-        
+            YellowButton(),
           ]
         ),
       ),
-      
     );
   }
 }
+

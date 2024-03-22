@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:non_existing/cards&classes.dart/charity_card.dart';
-import 'package:non_existing/cards&classes.dart/charity_class.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/page_header_label.dart';
-import 'package:non_existing/cards&classes.dart/donor_card.dart';
-import 'package:non_existing/cards&classes.dart/donor_class.dart';
+import 'package:non_existing/cards.dart/charity_card.dart';
+import 'package:non_existing/classes/charity_class.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/page_header_label.dart';
+import 'package:non_existing/cards.dart/donor_card.dart';
+import 'package:non_existing/classes/donor_class.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 import 'package:non_existing/presentations/charity_page.dart';
 import 'package:non_existing/presentations/view_charity_page.dart';
 
@@ -54,27 +55,11 @@ class DonatePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Welcome back,',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w600,
-                    color: CustomColors.buttonText,
-                    fontFamily: 'Merriweather',
-                  ),
-                ),
+                Text('Welcome back,', style: CustomTextStyle.extraLarge),
                 const SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Kian June Catubig!',
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.w700,
-                    color: CustomColors.buttonText,
-                    fontFamily: 'Merriweather',
-                  ),
-                ),
+                Text('Kian June Catubig!', style: CustomTextStyle.medium),
                 const SizedBox(
                   height: 40.0,
                 ),

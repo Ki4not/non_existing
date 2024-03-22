@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:non_existing/cards&classes.dart/custom_colors.dart';
-import 'package:non_existing/cards&classes.dart/notification_card.dart';
-import 'package:non_existing/cards&classes.dart/notification_class.dart';
-import 'package:non_existing/cards&classes.dart/page_header.dart';
-import 'package:non_existing/cards&classes.dart/page_header_label.dart';
+import 'package:non_existing/cards.dart/custom_colors.dart';
+import 'package:non_existing/cards.dart/notification_card.dart';
+import 'package:non_existing/classes/notification_class.dart';
+import 'package:non_existing/cards.dart/page_header_label.dart';
+import 'package:non_existing/classes/text_style_class.dart';
 
 List<Notifications> notifications = [
   Notifications(description: 'Thaagam Foundation donation has been completed', time: '9:21PM'),
@@ -36,7 +36,7 @@ class NotificationPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const PageHeader(text: 'Notifications'),
+                Text('Notifications', style: CustomTextStyle.extraLarge,),
                 const SizedBox(
                   height: 10.0,
                 ),
